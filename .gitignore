@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dependency directories
 node_modules/
 npm-debug.log
@@ -29,11 +30,29 @@ yarn-error.log*
 
 # Environment files
 .env
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+>>>>>>> 8bbe2de9bbad43eb53c9f4df4069abf85b8b20d2
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+<<<<<<< HEAD
 # Misc
 .cache/
 coverage/
@@ -97,3 +116,8 @@ Thumbs.db
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+=======
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+>>>>>>> 8bbe2de9bbad43eb53c9f4df4069abf85b8b20d2
