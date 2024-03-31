@@ -61,6 +61,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [@jungbum47](https://www.instagram.com/jungbum47/) - jeongbeom98@gmail.com
+JB Lee - [@jungbum47](https://www.instagram.com/jungbum47/) - jeongbeom98@gmail.com
 
 Project Link: [https://github.com/jeongbeom98/SCORN_WebApp.git](https://github.com/jeongbeom98/SCORN_WebApp.git)
