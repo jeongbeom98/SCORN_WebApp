@@ -1,0 +1,101 @@
+.ratings-container {
+    max-width: 800px;
+    margin: 0; /* Remove 'auto' to prevent centering */
+    padding: 20px 0; /* Top and bottom padding only */
+    height: auto;
+    min-height: 500px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+  }
+  
+  .questions-container {
+    background-color: #FFF;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  .family-group {
+    margin-bottom: 20px;
+  }
+  
+  .family-group h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .option-label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .actions-outside {
+    display: flex;
+    justify-content: flex-start; /* Keeps buttons aligned to the left */
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #FFD100;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: black;
+    color: #FFD100;
+  }
+  
+  .category-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .back-button {
+    margin-right: auto;
+  }
+  
+  input[type="text"], input[type="email"], input[type="button"], button {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1rem;
+  }
+  
+  .results-box {
+    background-color: #FFF;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  
+  .input-row {
+    margin-bottom: 10px;
+  }
+  
+  .input-row input[type="text"],
+  .input-row input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .actions-outside {
+    gap: 10px;
+  }
+  

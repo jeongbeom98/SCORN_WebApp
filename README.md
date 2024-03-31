@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# SCORN Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The SCORN (Sustainability Co-Operative Rating Number) application is a React-based web application designed to evaluate and grade sustainability practices across various operational categories. It allows users to select sustainability measures they've implemented and receive a SCORN grade based on their selections. This application supports sustainability assessment in areas such as Facilities, Fleet, Roadside Management, Construction, and Operations.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Dynamic Grading System:** Calculates a SCORN grade based on user selections against predefined sustainability criteria.
+- **Export Functionality:** Enables users to export their grading results to Excel for further analysis or record-keeping.
+- **Responsive Design:** Ensures a seamless user experience across desktop and mobile devices.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine before starting. Follow these steps to set up the project locally.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/jeongbeom98/SCORN.git
+   cd SCORN
+   ```
 
-### `npm test`
+2. Install the dependencies:
+   ```sh
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Start the application:
+   ```sh
+   npm start
+   ```
+   This command runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate through the application to select sustainability measures across different categories. Once selections are made, the application will:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Calculate a Total Score:** Based on the selected options.
+- **Determine a SCORN Grade:** Reflecting the sustainability efforts made.
+- **Export Results:** Users can download their grading results along with their SCORN grade in Excel format.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+Contributions to the SCORN application are welcome. If you have suggestions for improving the application, please fork the repository and create a pull request or open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Acknowledgments
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **React:** Utilized for the front-end framework.
+- **XLSX and File-Saver:** Used for generating and saving Excel files from the browser.
+- **Development Team:** For their dedication and effort in bringing this project to life.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For more detailed information on project setup, components, and functionalities, refer to the individual files and comments within the codebase.
