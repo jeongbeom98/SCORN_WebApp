@@ -1,57 +1,66 @@
-<<<<<<< HEAD
-=======
-# SCORN Application
+# SCORN (Sustainability Co-Operative Rating Number)
 
-The SCORN (Sustainability Co-Operative Rating Number) application is a React-based web application designed to evaluate and grade sustainability practices across various operational categories. It allows users to select sustainability measures they've implemented and receive a SCORN grade based on their selections. This application supports sustainability assessment in areas such as Facilities, Fleet, Roadside Management, Construction, and Operations.
+The SCORN application is designed to assist in evaluating sustainability practices within various operational contexts. Built with React, this application allows users to answer a series of questions related to sustainability, calculates a grade based on responses, and enables the export of results for record-keeping and further analysis.
 
 ## Features
 
-- **Dynamic Grading System:** Calculates a SCORN grade based on user selections against predefined sustainability criteria.
-- **Export Functionality:** Enables users to export their grading results to Excel for further analysis or record-keeping.
-- **Responsive Design:** Ensures a seamless user experience across desktop and mobile devices.
+- Interactive questions related to sustainability practices
+- Dynamic grading system based on user responses
+- Export functionality for grading results
+- Responsive design for accessibility across devices
 
-## Installation
+## Getting Started
 
-Ensure you have [Node.js](https://nodejs.org/) installed on your machine before starting. Follow these steps to set up the project locally.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-1. Clone the repository:
+### Prerequisites
+
+Before you begin, ensure you have the latest version of [Node.js](https://nodejs.org/) installed on your system. This will include `npm`, which is necessary to install dependencies and run the project.
+
+### Installation
+
+1. Clone the repository to your local machine:
    ```sh
-   git clone https://github.com/jeongbeom98/SCORN.git
+   git clone https://your-repository-url-here
+   ```
+
+2. Navigate into the project directory:
+   ```sh
    cd SCORN
    ```
 
-2. Install the dependencies:
+3. Install project dependencies:
    ```sh
    npm install
    ```
 
-3. Start the application:
+4. Start the development server:
    ```sh
    npm start
    ```
-   This command runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The application should now be running and accessible via [http://localhost:3000](http://localhost:3000) in your web browser.
 
 ## Usage
 
-Navigate through the application to select sustainability measures across different categories. Once selections are made, the application will:
-
-- **Calculate a Total Score:** Based on the selected options.
-- **Determine a SCORN Grade:** Reflecting the sustainability efforts made.
-- **Export Results:** Users can download their grading results along with their SCORN grade in Excel format.
+To use SCORN, simply follow the on-screen prompts to answer questions related to sustainability practices. Upon completion, the application will calculate and display a grade reflecting the sustainability score. Users have the option to export these results for documentation and further analysis.
 
 ## Contributing
 
-Contributions to the SCORN application are welcome. If you have suggestions for improving the application, please fork the repository and create a pull request or open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## Acknowledgments
+## Contact
 
-- **React:** Utilized for the front-end framework.
-- **XLSX and File-Saver:** Used for generating and saving Excel files from the browser.
-- **Development Team:** For their dedication and effort in bringing this project to life.
+JB Lee - [@jungbum47](https://www.instagram.com/jungbum47/) - jeongbeom98@gmail.com
 
-For more detailed information on project setup, components, and functionalities, refer to the individual files and comments within the codebase.
->>>>>>> 8bbe2de (First commit)
+Project Link: [https://github.com/your_username/your_project_name](https://github.com/jeongbeom98/SCORN_WebApp)
