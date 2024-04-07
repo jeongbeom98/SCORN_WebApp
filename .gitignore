@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 # Dependency directories
 node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
+/.pnp
+.pnp.js
 
 # Build outputs
 build/
@@ -30,55 +30,19 @@ yarn-error.log*
 
 # Environment files
 .env
-=======
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
->>>>>>> 8bbe2de9bbad43eb53c9f4df4069abf85b8b20d2
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-<<<<<<< HEAD
+# Testing
+/coverage
+
 # Misc
 .cache/
 coverage/
 *.tgz
 *.DS_Store
-
-# Debug log from npm
-npm-debug.log*
-
-# Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variable files
-.env*
-
-# parcel-bundler cache
-.cache
-
-# Misc
-*.pem
-*.key
-*.p12
-*.cert
-*.crt
-*.csr
-*.srl
 
 # Mac files
 .DS_Store
@@ -116,8 +80,23 @@ Thumbs.db
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
-=======
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
->>>>>>> 8bbe2de9bbad43eb53c9f4df4069abf85b8b20d2
+
+# Amplify configuration
+#amplify-do-not-edit-begin
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/logs
+amplify/mock-data
+amplify/mock-api-resources
+amplify/backend/amplify-meta.json
+amplify/backend/.temp
+aws-exports.js
+awsconfiguration.json
+amplifyconfiguration.json
+amplifyconfiguration.dart
+amplify-build-config.json
+amplify-gradle-config.json
+amplifytools.xcconfig
+.secret-*
+**.sample
+#amplify-do-not-edit-end
