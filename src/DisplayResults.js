@@ -2,64 +2,41 @@ import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 
-// Assuming calculateGrade and getScornGradeRange functions are correctly implemented elsewhere
 const calculateGrade = (selectedOptions, data) => {
     let totalScore = 0;
     let maxPossibleScore = 96; // Start with the total max possible score.
-  
-    // Iterate through each selected option to adjust scores and maxPossibleScore
+
     Object.entries(selectedOptions).forEach(([key, value]) => {
-      const score = parseInt(value, 10); // Ensure the score is an integer.
-      
+      const score = parseInt(value, 10);
+
       if (score < 0) {
-        // Subtract the absolute value of score from maxPossibleScore for "Not Applicable" options
-        maxPossibleScore += score; // score is negative, so it reduces maxPossibleScore
+        maxPossibleScore += score;
       } else {
-        // Add score to totalScore for applicable options
         totalScore += score;
       }
     });
-  
-    // Ensure maxPossibleScore does not drop below zero
+
     maxPossibleScore = Math.max(maxPossibleScore, 0);
-  
-    // Calculate the score percentage based on adjusted maxPossibleScore
-    const scorePercentage = totalScore / maxPossibleScore * 100;
-    
-    // Determine the grade based on scorePercentage
-    let grade = 'N'; // Default grade
-    if (scorePercentage >= 80) grade = 'S';
-    else if (scorePercentage >= 60) grade = 'C';
-    else if (scorePercentage >= 40) grade = 'O';
-    else if (scorePercentage >= 20) grade = 'R';
-  
-    return { totalScore, maxPossibleScore, grade };
-  };
-  
-function getScornGradeRange(grade) {
-  switch (grade) {
-    case 'S': return '80% - 100%';
-    case 'C': return '60% - 79%';
-    case 'O': return '40% - 59%';
-    case 'R': return '20% - 39%';
-    case 'N': return '0% - 19%';
-    default: return '';
-  }
-}
+    const scorePercentage = maxPossibleScore > 0 ? Math.round((totalScore / maxPossibleScore) * 100) : 0;
+
+    let level = 'N';
+    if (scorePercentage >= 80) level = 'S';
+    else if (scorePercentage >= 60) level = 'C';
+    else if (scorePercentage >= 40) level = 'O';
+    else if (scorePercentage >= 20) level = 'R';
+
+    return { totalScore, maxPossibleScore, scorePercentage, level };
+};
 
 const DisplayResults = ({ handleStartAgain, data, selectedOptions }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const { totalScore, maxPossibleScore, grade } = calculateGrade(selectedOptions, data);
+  const { totalScore, maxPossibleScore, scorePercentage, level } = calculateGrade(selectedOptions, data);
 
-  const isInputValid = () => {
-    return name.trim() !== '' && /\S+@\S+\.\S+/.test(email);
-  };
+  const isInputValid = () => name.trim() !== '' && /\S+@\S+\.\S+/.test(email);
 
-  const handleInputChange = (setter) => (e) => {
-    setter(e.target.value);
-  };
+  const handleInputChange = (setter) => (e) => setter(e.target.value);
 
   const exportToExcel = (exportData, fileName) => {
     const worksheet = XLSX.utils.json_to_sheet(exportData);
@@ -76,29 +53,28 @@ const DisplayResults = ({ handleStartAgain, data, selectedOptions }) => {
       return;
     }
 
-    const detailedResults = Object.entries(selectedOptions).map(([questionKey, selectedPoint]) => {
-      const questionDetail = data.find(option => `${option.Abbreviation}-${option.Number}-${option.Title}` === questionKey) || {};
+    const detailedResults = Object.entries(selectedOptions).map(([questionKey, points]) => {
+      const [abbreviation, number, title] = questionKey.split('-');
+      const question = data.find(q => q.Abbreviation === abbreviation && q.Number.toString() === number && q.Title === title);
       return {
-        Category: questionDetail.Category || 'N/A',
-        Question: `${questionDetail.Abbreviation}-${questionDetail.Number} ${questionDetail.Title}`,
-        SelectedOption: selectedPoint < 0 ? 'Not Applicable' : (questionDetail.Option || 'N/A'),
-        Points: selectedPoint >= 0 ? selectedPoint.toString() : "", // Leave Points cell blank for negative values
+        Category: question.Category || 'N/A',
+        Question: title,
+        SelectedOption: points < 0 ? 'Not Applicable' : question.Option,
+        Points: points.toString()
       };
     });
 
     const exportData = [
       ...detailedResults,
-      { Category: "", Question: "", SelectedOption: "", Points: "" },
-      { Category: "Name", Question: name, SelectedOption: "", Points: "" },
-      { Category: "Email", Question: email, SelectedOption: "", Points: "" },
-      { Category: "Total Score", Question: totalScore.toString(), SelectedOption: "", Points: "" },
-      { Category: "Maximum Possible Score", Question: maxPossibleScore.toString(), SelectedOption: "", Points: "" },
-      { Category: "SCORN Grade", Question: grade, SelectedOption: "", Points: "" },
+      { Category: "Summary", Question: "Name", SelectedOption: name, Points: "" },
+      { Category: "Summary", Question: "Email", SelectedOption: email, Points: "" },
+      { Category: "Summary", Question: "Total Score", SelectedOption: `${totalScore} (${isNaN(scorePercentage) ? 'N/A' : scorePercentage + "%" })`, Points: "" },
+      { Category: "Summary", Question: "Maximum Possible Score", SelectedOption: maxPossibleScore.toString(), Points: "" },
+      { Category: "Summary", Question: "SCORN Level", SelectedOption: level, Points: "" },
     ];
 
-    // Filename format: [name]_SCORN_Grade.xlsx
     const formattedName = name.trim().replace(/\s+/g, '_');
-    const fileName = `${formattedName}_SCORN_Grade.xlsx`;
+    const fileName = `${formattedName}_SCORN_Score.xlsx`;
     exportToExcel(exportData, fileName);
   };
 
@@ -108,7 +84,8 @@ const DisplayResults = ({ handleStartAgain, data, selectedOptions }) => {
       <div className="results-box">
         <p>Total Score: {totalScore}</p>
         <p>Maximum Possible Score: {maxPossibleScore}</p>
-        <p>SCORN Grade: {grade} ({getScornGradeRange(grade)})</p>
+        <p>Percent Score: {isNaN(scorePercentage) ? 'N/A' : scorePercentage + "%"}</p>
+        <p>SCORN Level: {level}</p>
       </div>
       <div className="input-row">
         <input type="text" placeholder="Name" value={name} onChange={handleInputChange(setName)} required />

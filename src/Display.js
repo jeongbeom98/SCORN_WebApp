@@ -59,7 +59,16 @@ const Display = ({ data }) => {
   }));
 
   const handleNext = () => {
-    setCurrentPageIndex(currentPageIndex + 1);
+    const currentQuestions = groupedQuestions[currentPageIndex]?.questions || {};
+    const allQuestionsAnswered = Object.keys(currentQuestions).every(
+      (key) => selectedOptions[key] !== undefined
+    );
+  
+    if (!allQuestionsAnswered) {
+      alert('To continue, please make a selection for each question within the scorecards. \nIf a question does not apply to your situation, select \'N/A.\' \n(Choosing \'N/A\' will adjust your Maximum Possible Score accordingly.)');
+    } else {
+      setCurrentPageIndex(currentPageIndex + 1);
+    }
   };
 
   const handleBack = () => {
@@ -67,9 +76,18 @@ const Display = ({ data }) => {
   };
 
   const handleGrade = () => {
-    const results = calculateGrade(selectedOptions, data);
-    setGradingResults(results);
-    setShowResults(true);
+    const currentQuestions = groupedQuestions[currentPageIndex]?.questions || {};
+    const allQuestionsAnswered = Object.keys(currentQuestions).every(
+      (key) => selectedOptions[key] !== undefined
+    );
+  
+    if (!allQuestionsAnswered) {
+      alert('To continue, please make a selection for each question within the scorecards. \nIf a question does not apply to your situation, select \'N/A.\' \n(Choosing \'N/A\' will adjust your Maximum Possible Score accordingly.)');
+    } else {
+      const results = calculateGrade(selectedOptions, data);
+      setGradingResults(results);
+      setShowResults(true);
+    }
   };
 
   const handleStartAgain = () => {
