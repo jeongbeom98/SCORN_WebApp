@@ -1,0 +1,74 @@
+[
+    {
+        "Category": "Sustainable Transport Innovations",
+        "Abbreviation": "STI",
+        "Number": 1,
+        "Title": "Solar-Powered Roads",
+        "Option": "No Solar Roads",
+        "Points": 0
+    },
+    {
+        "Category": "Sustainable Transport Innovations",
+        "Abbreviation": "STI",
+        "Number": 1,
+        "Title": "Solar-Powered Roads",
+        "Option": "Pilot Solar Road in Limited Area",
+        "Points": 2
+    },
+    {
+        "Category": "Sustainable Transport Innovations",
+        "Abbreviation": "STI",
+        "Number": 1,
+        "Title": "Solar-Powered Roads",
+        "Option": "Widespread Implementation of Solar Roads",
+        "Points": 5
+    },
+    {
+        "Category": "Sustainable Transport Innovations",
+        "Abbreviation": "STI",
+        "Number": 2,
+        "Title": "Biodegradable Road Materials",
+        "Option": "Traditional Road Materials Only",
+        "Points": 0
+    },
+    {
+        "Category": "Sustainable Transport Innovations",
+        "Abbreviation": "STI",
+        "Number": 2,
+        "Title": "Biodegradable Road Materials",
+        "Option": "Biodegradable Materials in Minor Repairs",
+        "Points": 3
+    },
+    {
+        "Category": "Sustainable Transport Innovations",
+        "Abbreviation": "STI",
+        "Number": 2,
+        "Title": "Biodegradable Road Materials",
+        "Option": "Major Roads Built with Biodegradable Materials",
+        "Points": 5
+    },
+    {
+        "Category": "Sustainable Transport Innovations",
+        "Abbreviation": "STI",
+        "Number": 3,
+        "Title": "Hydrogen Fuel Infrastructure",
+        "Option": "No Hydrogen Fuel Stations",
+        "Points": 0
+    },
+    {
+        "Category": "Sustainable Transport Innovations",
+        "Abbreviation": "STI",
+        "Number": 3,
+        "Title": "Hydrogen Fuel Infrastructure",
+        "Option": "Hydrogen Stations in Urban Areas",
+        "Points": 3
+    },
+    {
+        "Category": "Sustainable Transport Innovations",
+        "Abbreviation": "STI",
+        "Number": 3,
+        "Title": "Hydrogen Fuel Infrastructure",
+        "Option": "Comprehensive National Hydrogen Network",
+        "Points": 6
+    }
+]
